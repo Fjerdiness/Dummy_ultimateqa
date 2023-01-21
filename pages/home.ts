@@ -28,7 +28,4 @@ export class HomePage extends BasePage {
     public async goto() {
         await this.page.goto('');
     }
-    public async url_is_correct() {
-        await expect(this.page).toHaveURL('')
-    }
 }
