@@ -2,25 +2,25 @@ import { expect, Page } from '@playwright/test'
 import { HomePageSelector } from '../utils/enum/home'
 import { BasePage } from '../basePage/basePage'
 
-export class SignInPage extends BasePage {
+export class SignUpPage extends BasePage {
     constructor(page: Page) {
         super(page)
     }
 
     public override get url() {
-        return super.url + '/users/sign_in'
+        return super.url + '/users/sign_up'
     }
     public get mainUrl() {
         return super.url
     }
     public get pageName() {
-        return 'Sign In'
+        return 'Sign Up'
     }
     public get title() {
         return this.page.locator(HomePageSelector.TitleSelector)
     }
     public get titleText() {
-        return 'Sign In - Ultimate QA'
+        return 'Create a new account - Ultimate QA'
     }
 
     public override async goto() {
