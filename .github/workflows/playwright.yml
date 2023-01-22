@@ -26,7 +26,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-          name: automerge
+name: automerge
   job2:
     needs: job1
     automerge:
