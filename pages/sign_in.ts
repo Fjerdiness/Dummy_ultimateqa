@@ -1,29 +1,29 @@
-import { expect, Page } from '@playwright/test';
-import { HomePageSelector } from '../utils/enum/home';
-import { BasePage } from '../basePage/basePage';
+import { expect, Page } from '@playwright/test'
+import { HomePageSelector } from '../utils/enum/home'
+import { BasePage } from '../basePage/basePage'
 
 export class SignInPage extends BasePage {
     constructor(page: Page) {
-        super(page);
+        super(page)
     }
 
     public override get url() {
-        return super.url + '/users/sign_in';
+        return super.url + '/users/sign_in'
     }
     public get mainUrl() {
         return super.url
     }
     public get pageName() {
-        return 'Sign In';
+        return 'Sign In'
     }
     public get title() {
-        return this.page.locator(HomePageSelector.TitleSelector);
+        return this.page.locator(HomePageSelector.TitleSelector)
     }
     public get titleText() {
-        return 'Welcome Back!'
+        return 'Sign In - Ultimate QA'
     }
 
     public override async goto() {
-        await this.page.goto(this.url);
+        await this.page.goto(this.url)
     }
 }
