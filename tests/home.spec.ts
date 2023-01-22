@@ -9,7 +9,6 @@ let page: Page
 let home: HomePage
 let collections: CollectionsPage
 let sign_in: SignInPage
-let color: ColorEnum
 
 test.beforeAll(async ({ browser }) => {
     page = await browser.newPage()
