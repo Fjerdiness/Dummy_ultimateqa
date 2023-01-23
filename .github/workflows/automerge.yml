@@ -1,7 +1,7 @@
 name: Auto-Merge
 on:
   workflow_run:
-    workflows: [test]
+    workflows: [Playwright Tests]
     types:
       - completed
 env:
@@ -33,4 +33,3 @@ jobs:
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
         git push
-# asdasdasd
