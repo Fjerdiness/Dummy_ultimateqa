@@ -1,4 +1,4 @@
-export enum ColorEnum {
+export enum Color {
     DarkGreen = 'rgb(122, 133, 78)',
     Gray = 'rgb(242, 243, 245)',
     LightGreenBorderColor = 'rgb(161, 173, 115)',

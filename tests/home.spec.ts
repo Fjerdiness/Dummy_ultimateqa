@@ -3,7 +3,7 @@ import { HomePage } from '../pages/home'
 import { HomePageSelector } from '../utils/enum/home'
 import { CollectionsPage } from '../pages/collections'
 import { SignInPage } from '../pages/sign_in'
-import { ColorEnum } from '../utils/enum/color'
+import { Color } from '../utils/enum/color'
 
 let page: Page
 let home: HomePage
@@ -31,7 +31,7 @@ test.describe('Home page tests', () => {
         const elem = await page.locator(HomePageSelector.CourseItem).first()
         const href = await elem.getAttribute('href')
         await elem.hover()
-        await expect(elem).toHaveCSS('color', ColorEnum.LightBlack)
+        await expect(elem).toHaveCSS('color', Color.LightBlack)
         await elem.click()
         await expect(page).toHaveURL(home.mainUrl + href)
     })
@@ -40,21 +40,21 @@ test.describe('Home page tests', () => {
         const elem = await page.locator(HomePageSelector.CourseItem).last()
         const href = await elem.getAttribute('href')
         await elem.hover()
-        await expect(elem).toHaveCSS('color', ColorEnum.LightBlack)
+        await expect(elem).toHaveCSS('color', Color.LightBlack)
         await elem.click()
         await expect(page).toHaveURL(home.mainUrl + href)
     })
     test('click more courses button', async () => {
         const elem = await page.locator(HomePageSelector.ViewMoreCourseBtn)
         await elem.hover()
-        await expect(elem).toHaveCSS('background-color', ColorEnum.DarkGreen)
+        await expect(elem).toHaveCSS('background-color', Color.DarkGreen)
         await elem.click()
         await expect(page).toHaveURL(collections.url)
     })
     test('click sign in button', async () => {
         const elem = await page.locator(HomePageSelector.SignInBtn)
         await elem.hover()
-        await expect(elem).toHaveCSS('color', ColorEnum.LightBlack)
+        await expect(elem).toHaveCSS('color', Color.LightBlack)
         await elem.click()
         await expect(page).toHaveURL(sign_in.url)
     })
