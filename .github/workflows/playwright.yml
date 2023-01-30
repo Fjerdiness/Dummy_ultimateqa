@@ -27,13 +27,13 @@ jobs:
           retention-days: 30        
     merge-branch:
       runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: WIP -> main
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          target_branch: main
-          github_token: ${{ github.token }}
+      steps:
+        - uses: actions/checkout@master
+        - name: WIP -> main
+          uses: devmasx/merge-branch@master
+          with:
+            type: now
+            target_branch: main
+            github_token: ${{ github.token }}
 
           
