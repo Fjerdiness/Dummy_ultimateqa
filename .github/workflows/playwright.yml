@@ -26,6 +26,7 @@ jobs:
           path: playwright-report/
           retention-days: 30        
     merge-branch:
+      if: ${{ success() }}
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@master
