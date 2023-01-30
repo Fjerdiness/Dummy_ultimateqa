@@ -19,16 +19,17 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
-      - name: Auto-Merge
-        if: success()
-      - uses: actions/automerge@v2
-        with:
-          branch: main
-          labels: automatic merge
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 30        
+    Auto-Merge:
+      - uses: actions/automerge@v2
+        if: success()
+        with:
+          branch: main
+          labels: automatic merge
+
           
