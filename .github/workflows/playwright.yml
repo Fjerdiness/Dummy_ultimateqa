@@ -26,6 +26,8 @@ jobs:
           path: playwright-report/
           retention-days: 30        
     Auto-Merge:
+      - name: Auto-Merge
+      runs-on: ubuntu-latest        
       - uses: actions/automerge@v2
         if: success()
         with:
