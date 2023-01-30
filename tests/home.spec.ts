@@ -19,7 +19,7 @@ test.beforeAll(async ({ browser }) => {
 
 test.beforeEach(async () => {
     await home.goto()
-    await expect(page).toHaveTitle(home.titleText) //TODO 
+    await expect(page).toHaveTitle(home.titleText)
 })
 
 test.describe('Home page tests', () => {
