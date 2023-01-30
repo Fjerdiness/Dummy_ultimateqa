@@ -32,7 +32,7 @@ jobs:
       if: success()
       steps:
       - name: Auto-Merge
-        uses: actions/automerge@v2
+        uses: actions/automerge@v3
         with:
           branch: main
           labels: automatic merge
