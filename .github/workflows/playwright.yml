@@ -31,10 +31,11 @@ jobs:
       needs: test
       if: success()
       steps:
-      - name: Auto-Merge
-        uses: actions/automerge@v3
+      - name: Action-Automerge
+        uses: mtanzi/action-automerge@v1
         with:
-          branch: main
-          labels: automatic merge
+          github_token: ${{ github.token }}
+          source: 'WIP'
+          target: 'main'
 
           
