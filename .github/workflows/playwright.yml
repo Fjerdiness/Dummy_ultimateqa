@@ -25,11 +25,14 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30        
-    auto-merge:
+    automerge:
+      name: Auto-Merge
+      runs-on: ubuntu-latest
+      needs: test
+      if: success()
+      steps:
       - name: Auto-Merge
-      runs-on: ubuntu-latest        
-      - uses: actions/automerge@v2
-        if: success()
+        uses: actions/automerge@v2
         with:
           branch: main
           labels: automatic merge
