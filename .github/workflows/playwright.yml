@@ -29,7 +29,6 @@ jobs:
         if: steps.Run_Playwright_tests.conclusion == 'success'
       - uses: devmasx/merge-branch@master
         with:
-          name: WIP -> main
           type: now
           target_branch: main
           github_token: ${{ github.token }}
