@@ -25,7 +25,7 @@ test.beforeEach(async () => {
 test.describe('Home page tests', () => {
     test('click logo', async () => {
         await page.locator(HomePageSelector.Logo).click()
-        await expect(page).toHaveURL(sign_in.url)
+        await expect(page).toHaveURL(collections.url)
     })
     test('click first course', async () => {
         const elem = await page.locator(HomePageSelector.CourseItem).first()
