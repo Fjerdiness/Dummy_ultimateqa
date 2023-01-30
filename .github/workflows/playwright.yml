@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
+      - name: Run_Playwright_tests
         run: npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
@@ -25,16 +25,13 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30        
-    merge-branch:
-      if: ${{ success() }}
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@master
-        - name: WIP -> main
-          uses: devmasx/merge-branch@master
-          with:
-            type: now
-            target_branch: main
-            github_token: ${{ github.token }}
+      - uses: actions/checkout@master
+        if: steps.Run_Playwright_tests.conclusion == 'success'
+      - uses: devmasx/merge-branch@master
+        with:
+          name: WIP -> main
+          type: now
+          target_branch: main
+          github_token: ${{ github.token }}
 
           
