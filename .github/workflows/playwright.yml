@@ -17,7 +17,7 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
+      - name: Run_Playwright_tests
         run: npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
@@ -26,7 +26,7 @@ jobs:
           path: playwright-report/
           retention-days: 30        
       - uses: actions/checkout@master
-        if: steps.Run Playwright tests.conclusion == 'success'
+        if: steps.Run_Playwright_tests.conclusion == 'success'
       - uses: devmasx/merge-branch@master
         with:
           name: WIP -> main
